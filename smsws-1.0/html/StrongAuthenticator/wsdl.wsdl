@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	WSDL description of the Strong Authentication Service.
+	     Strong Authentication Service was developed by Andrea Biancini
+	     on behalf of Reti S.p.A.
+-->
+<definitions name="StrongAuth" targetNamespace="urn:StrongAuth" xmlns:typens="urn:StrongAuth"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+	<!-- Types for authentication -->
+	<types>
+		<xsd:schema targetNamespace="urn:StrongAuth" xmlns="http://www.w3.org/2001/XMLSchema">
+			<xsd:complexType name="Domanda">
+				<xsd:all>
+					<xsd:element name="tipo" type="xsd:string"/>
+					<xsd:element name="testo" type="xsd:string"/>
+				</xsd:all>
+			</xsd:complexType>
+		</xsd:schema>
+	</types>
+ 
+	<!-- Messages for Strong Authentication Service -->
+	<message name="StartAuthRequest">
+		<part name="username" type="xsd:string"/>
+	</message>
+	<message name="StartAuthResponse">
+		<part name="result" type="xsd:string"/>
+	</message>
+ 
+	<message name="GetDomandaRequest">
+		<part name="username" type="xsd:string"/>
+		<part name="sessionID" type="xsd:string"/>
+	</message>
+	<message name="GetDomandaResponse">
+		<part name="result" type="typens:Domanda"/>
+	</message>
+ 
+	<message name="SendRispostaRequest">
+		<part name="username" type="xsd:string"/>
+		<part name="sessionID" type="xsd:string"/>
+		<part name="risposta" type="xsd:string"/>
+	</message>
+	<message name="SendRispostaResponse" />
+ 
+	<!-- Port for Strong Authentication Service -->
+	<portType name="StrongAuthPortType">
+		<operation name="startAuth">
+			<documentation><![CDATA[Questo metodo permette di richiedere l'autenticazione di un utente.<BR>Richiede il passaggio del nome utente dell'utente stesso.<BR>Restituisce una stringa che verr&agrave; utilizzata come ID per tracciare la sessione di autenticazione.]]></documentation>
+			<input message="typens:StartAuthRequest"/>
+			<output message="typens:StartAuthResponse"/>
+		</operation>
+		<operation name="getDomanda">
+			<documentation><![CDATA[Questo metodo permette di verificare se, ai fini dell'autenticazione, l'utente deve rispondere ad una domanda quale ad esempio la richiesta di immissione di una password.<BR>Vengono restituite due stringe: la prima rappresenta il tipo di domanda che occorre presentare all'utente, la seconda rappresenta il testo con la richiesta per l'utente.]]></documentation>
+			<input message="typens:GetDomandaRequest"/>
+			<output message="typens:GetDomandaResponse"/>
+		</operation>
+		<operation name="sendRisposta">
+			<documentation><![CDATA[Questo metodo permette di comunicare al server la riposta inserita dall'utente riguardo alla domanda corrente. Si da per scontato che la domanda venga letta con il metodo getDomanda e la risposta si riferisca quindi alla domanda appena visualizzata.<BR>Questo metodo non restituisce nessun valore.]]></documentation>
+			<input message="typens:SendRispostaRequest"/>
+			<output message="typens:SendRispostaResponse"/>
+		</operation>
+	</portType>
+   
+	<!-- Binding for Strong Authentication Service -->
+	<binding name="StrongAuthBinding" type="typens:StrongAuthPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="startAuth">
+			<soap:operation soapAction="urn:StrongAuth#startAuth"/>
+			<input>
+				<soap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="urn:StrongAuth"
+					use="encoded"/>
+			</input>
+			<output>
+				<soap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="urn:StrongAuth"
+					use="encoded"/>
+			</output>
+		</operation>
+		<operation name="getDomanda">
+			<soap:operation soapAction="urn:StrongAuth#getDomanda"/>
+			<input>
+				<soap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="urn:StrongAuth"
+					use="encoded"/>
+			</input>
+			<output>
+				<soap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="urn:StrongAuth"
+					use="encoded"/>
+			</output>
+		</operation>
+		<operation name="sendRisposta">
+			<soap:operation soapAction="urn:StrongAuth#sendRisposta"/>
+			<input>
+				<soap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="urn:StrongAuth"
+					use="encoded"/>
+			</input>
+			<output>
+				<soap:body
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+					namespace="urn:StrongAuth"
+					use="encoded"/>
+			</output>
+		</operation>
+	</binding>
+ 
+	<!-- Endpoint for Strong Authentication Service -->
+	<service name="StrongAuth">
+		<documentation><![CDATA[Questo web service permette di richiedere l'autenticazione di un utente attraverso i meccanismi di Strong Authentication. La Strong Authentication proposta permette di identificare un utente per mezzo del suo dispositivo cellulare GSM.]]></documentation>
+		<port binding="typens:StrongAuthBinding" name="StrongAuthPort">
+			<soap:address location="http://logic.homedomain/cgi-bin/StrongAuthentication.cgi"/>
+		</port>
+	</service>
+</definitions>
+

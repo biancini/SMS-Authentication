@@ -1,0 +1,14 @@
+# <<I>> viene fatto variare da 1 al numero di spazi disponibili
+# nella memoria SIM fino a che non vengono letti tutti i messaggi
+# attualmente in memoria.
+# Si da per scontanto che l'esecuzione di questi comandi elimini i
+# messaggi dopo l'avvenuta lettura.
+
+ATZ
+OK
+
+AT+CMGR=<<I>>
+\+CMGR: \".+\",\"(.+)\",,\"(.*)\"[\r\n]+(.+)[\r\n]+OK
+
+AT+CMGD=<<I>>
+OK

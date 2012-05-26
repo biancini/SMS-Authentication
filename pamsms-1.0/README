@@ -1,0 +1,42 @@
+
+                          pamsms PAM module
+
+  What is it?
+  -----------
+
+  The pamsms PAM module is a module for PAM which is able to authenticate
+  a user using his mobile phone.
+  This module sends a random alfanumerical token via SMS to the cell-phone
+  of the user to be authenticated and then waits for the user to communicate
+  this token back. It consider the user authenticated only when the right
+  token has been communicated back.
+
+  The Latest Version
+  ------------------
+
+  In order to know which is the latest version of this software you
+  should contact Gruppo Reti S.p.A. directly or visit its web site:
+  http://www.reti.it/.
+
+  Documentation
+  -------------
+
+  The documentation is not available because it's not pubblic.
+  Please contact Gruppo Reti S.p.A.
+
+  Installation
+  ------------
+
+  This software is distributed as an RPM file for a RedHat Linux or Fedora
+  Linux platforms.
+
+  Licensing
+  ---------
+
+  The license is owned by Gruppo Reti S.p.A.
+
+  Contacts
+  --------
+
+  If you want any information about this software please contact Gruppo Reti S.p.A.
+  directly or visiting its web site http://www.reti.it/

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+	<contractRef ref="http://logic.homedomain/StrongAuthenticator/wsdl.wsdl" docRef="http://logic.homedomain/cgi-bin/webservice.pl?ws=StrongAuthenticator" xmlns="http://schemas.xmlsoap.org/disco/scl/" /> 
+	<soap address="http://logic.homedomain/cgi-bin/StrongAuthenticator.cgi" xmlns:q1="urn:strongauth" binding="q1:StrongAuth" xmlns="http://schemas.xmlsoap.org/disco/soap/" /> 
+</discovery>

@@ -1,0 +1,42 @@
+
+                          SMS Gateway
+
+  What is it?
+  -----------
+
+  SMS Gateway is a program which controls a GSM modem (connected to serial port)
+  and uses it to send and receive SMS messages to GSM devices.
+  This program creates a spool directory where you can put files rapresenting
+  an SMS to be sent.
+  It also listens to messages incoming and if one message is received it could
+  perform some particolar action accordingly to the current configuration.
+
+  The Latest Version
+  ------------------
+
+  In order to know which is the latest version of this software you
+  should contact Gruppo Reti S.p.A. directly or visit its web site:
+  http://www.reti.it/.
+
+  Documentation
+  -------------
+
+  The documentation is not available because it's not pubblic.
+  Please contact Gruppo Reti S.p.A.
+
+  Installation
+  ------------
+
+  This software is distributed as an RPM file for a RedHat Linux or Fedora
+  Linux platforms.
+
+  Licensing
+  ---------
+
+  The license is owned by Gruppo Reti S.p.A.
+
+  Contacts
+  --------
+
+  If you want any information about this software please contact Gruppo Reti S.p.A.
+  directly or visiting its web site http://www.reti.it/

@@ -1,0 +1,40 @@
+
+                          SMS Webservice
+
+  What is it?
+  -----------
+
+  SMS Webservice is a program which implements a wrapper to the PAM authentication
+  mechanism. It makes possibile to authenticate against PAM via a web-service
+  interface.
+  It also supports authentication via the GSM cell-phone.
+
+  The Latest Version
+  ------------------
+
+  In order to know which is the latest version of this software you
+  should contact Gruppo Reti S.p.A. directly or visit its web site:
+  http://www.reti.it/.
+
+  Documentation
+  -------------
+
+  The documentation is not available because it's not pubblic.
+  Please contact Gruppo Reti S.p.A.
+
+  Installation
+  ------------
+
+  This software is distributed as an RPM file for a RedHat Linux or Fedora
+  Linux platforms.
+
+  Licensing
+  ---------
+
+  The license is owned by Gruppo Reti S.p.A.
+
+  Contacts
+  --------
+
+  If you want any information about this software please contact Gruppo Reti S.p.A.
+  directly or visiting its web site http://www.reti.it/

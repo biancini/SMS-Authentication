@@ -1,0 +1,12 @@
+# Comandi per interrogare lo stato del segnale GSM.
+# Il comando deve ritornare un numero che indica il livello di
+# qualità del segnale.
+# La scala del segnale è data dalle variabili min_segnale e max_segnale
+# definite in modem.conf
+
+ATZ
+OK
+
+AT+CSQ
+\+CSQ: ([0-9]+),[0-9]+
+OK

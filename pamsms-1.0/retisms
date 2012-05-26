@@ -1,0 +1,6 @@
+#%PAM-1.0
+#auth	    required      /lib/security/$ISA/pam_unix.so
+auth        required      /lib/security/$ISA/pam_retisms.so
+account     required      /lib/security/$ISA/pam_retisms.so
+password    required      /lib/security/$ISA/pam_retisms.so
+session     required      /lib/security/$ISA/pam_retisms.so

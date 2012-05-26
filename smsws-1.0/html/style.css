@@ -1,0 +1,19 @@
+HTML {
+    margin: 0;
+    padding: 0;
+    height: 100%
+}
+
+BODY {
+    font-size: 11px;
+    font-family: Verdana
+    margin: 0;
+    padding: 0;
+    height: 100%
+}
+
+.redCol {
+	background-color: #BF0000;
+	color: white;
+	font-size: 10pt;
+}

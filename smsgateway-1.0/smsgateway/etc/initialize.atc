@@ -1,0 +1,29 @@
+ATZ
+(ATZ)?
+?OK
+
+# Disabilita l'echo dei comandi
+# per riabilitarlo ATE1
+ATE0
+(ATE0)?
+?OK
+
+# Abiliata/disabilita il report del servizio dati
+AT+CR=0
+OK
+
+# Abilita/disabilita il report delle chiamate entranti
+AT+CRC=0
+OK
+
+# Impostazione della modalità di ricerca automatica
+AT+COPS=0,2
+OK
+
+# Impostazione del centro servizi TIM
+AT+CSCA="+393359609600"
+OK
+
+# Salvataggio della configurazione
+AT&W
+OK

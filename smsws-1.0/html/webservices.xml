@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+        XML description of the web-services available on this server.
+            This file was developed by Andrea Biancini on behalf of Reti S.p.A.
+-->
+<services host="logic.homedomain">
+	<header><![CDATA[
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	]]></header>
+
+	<webservices>
+		<service name="StrongAuthenticator">
+			<description><![CDATA[
+			Questo web service permette all'utente di essere identificato.<br/>
+			L'applicazione che necessita di una Strong Authentication richiamer&agrave;
+			questo web service fornendo il nome dell'utente che si desidera riconoscere.
+			Il web service si occuper&agrave; di effettuare i passaggi necessari per identificare
+			l'utente attraverso il proprio dispositivo GSM e quindi risponder&agrave; in modo
+			positivo o negativo a seconda del successo o meno della procedura di autenticazione.
+			]]></description>
+
+			<methods>
+				<method name="startAuth">
+					<description><![CDATA[
+						Questo metodo permette di richiedere l'autenticazione di un utente.<br/>
+						Richiede il passaggio del nome utente dell'utente stesso.<br/>
+						Restituisce una stringa che verrà utilizzata come ID per tracciare la sessione di autenticazione.
+					]]></description>
+				</method>
+				<method name="getDomanda">
+					<description><![CDATA[
+						Questo metodo permette di verificare se, ai fini dell'autenticazione, l'utente deve rispondere ad una domanda quale ad esempio la richiesta di immissione di una password.<br/>
+Viene restituito un oggetto di tipo "Domanda" che contiene due stringe: la prima rappresenta il tipo di domanda che occorre presentare all'utente, la seconda rappresenta il testo con la richiesta per l'utente. 
+					]]></description>
+				</method>
+				<method name="sendRisposta">
+					<description><![CDATA[
+						Questo metodo permette di comunicare al server la riposta inserita dall'utente riguardo alla domanda corrente. Si da per scontato che la domanda venga letta con il metodo getDomanda e la risposta si riferisca quindi alla domanda appena visualizzata.<br/>
+Questo metodo non restituisce nessun valore. 
+					]]></description>
+				</method>
+			</methods>
+		</service>
+	</webservices>
+</services>
